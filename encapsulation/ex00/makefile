@@ -1,5 +1,5 @@
 NAME = main
-CC = c++  #-fsanitize=address -g
+CC = c++ -std=c++98 #-fsanitize=address -g
 FLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 

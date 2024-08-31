@@ -44,7 +44,7 @@ public:
                 return;
             }
         }
-        std::cerr << "Account not found" << std::endl;
+        std::cerr << "Account not found " << id  <<  std::endl;
     }
 
     void depositToAccount(int id, int amount) {
@@ -55,7 +55,7 @@ public:
                 return;
             }
         }
-        std::cerr << "Account not found" << std::endl;
+        std::cerr << "Account not found " << id << std::endl;
     }
 
     void withdrawFromAccount(int id, int amount) {
@@ -65,7 +65,7 @@ public:
                 return;
             }
         }
-        std::cerr << "Account not found" << std::endl;
+        std::cerr << "Account not found id = " << id << std::endl;
     }
 
     void giveLoan(int id, int amount) {

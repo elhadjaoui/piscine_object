@@ -1,26 +1,23 @@
 
-#include "Account.hpp"
-#include "Bank.hpp"
+#include "graph.hpp"
 
 using namespace std;
 int main()
 {
-    Bank bank;
+    Vector2 graph_size(10, 10);
+    Graph graph(graph_size);
 
-    bank.createAccount(1, 100);
-    bank.createAccount(2, 200);
-    bank.createAccount(3, 300);
-    bank.createAccount(4, 400);
-    bank.createAccount(5, 500);
-    cout << bank << endl;
-    bank.depositToAccount(1, 100);
-    bank.depositToAccount(2, 200);
-    bank.deleteAccount(3);
-    cout << bank << endl;
-    bank.giveLoan(4, 80);
-    cout << bank << endl;
+    // Add some points to the graph
+    graph.add_point(new Vector2(1, 1));
+    graph.add_point(new Vector2(2, 3));
+    graph.add_point(new Vector2(5, 5));
+    graph.add_point(new Vector2(9, 9));
+    // graph.add_point(new Vector2(10, 10)); // Out of bounds
 
-    // cout << account.getId() << endl;
+
+    // Display the graph
+    cout << graph << endl;
+   
     
     return (0);
 }

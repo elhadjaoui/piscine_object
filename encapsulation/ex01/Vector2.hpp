@@ -9,25 +9,25 @@ class Graph;
 class Vector2
 {
 private:
-    int x;
-    int y;
+    float x;
+    float y;
 
 public:
     Vector2(int x, int y) : x(x), y(y) {}
 
-    const int &getX() const
+    const float &getX() const
     {
         return x;
     }
 
-    const int &getY() const
+    const float &getY() const
     {
         return y;
     }
 
     friend std::ostream &operator<<(std::ostream &p_os, const Vector2 &p_Vector2)
     {
-        p_os << "[" << p_Vector2.x << ", " << p_Vector2.y << "]";
+        p_os << "(" << p_Vector2.x << ", " << p_Vector2.y << ")";
         return p_os;
     }
     friend class Graph;

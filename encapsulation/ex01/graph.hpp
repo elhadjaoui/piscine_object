@@ -14,12 +14,13 @@ private:
 
 public:
     Graph(Vector2 size): size(size) {}
+
     void add_point(Vector2* point) {
-        if (point->x >= 0 && point->x < size.x && point->y >= 0 && point->y < size.y) {
+        if (point->x >= 0 && point->x <= size.x && point->y >= 0 && point->y <= size.y) {
             points.push_back(point);
         } 
         else 
-            std::cout << "Point " << point << " is out of bounds and will not be added.\n";
+            std::cout << "Point (" << point->getX() <<  ','  << point->getY() << ") is out of bounds and will not be added.\n";
     }
 
 /*
@@ -49,7 +50,8 @@ public:
 */
     friend std::ostream &operator<<(std::ostream &p_os, const Graph &p_graph)
     {
-       for (int i = p_graph.size.getY() + 1; i >= 0 ; i--)
+        int found = 0;
+        for (int i = p_graph.size.getY() + 1; i >= 0 ; i--)
          {
             p_os << i;
               for (int j = 0; j <= p_graph.size.getX() + 1; j++)
@@ -59,10 +61,13 @@ public:
                     if ((*it)->getX() == j && (*it)->getY() == i)
                     {
                         p_os << " X ";
+                        found = 1;
                         break;
                     }
-              }
+                }
+                if (found == 0)
                   p_os << " . ";
+                found = 0;
               }
                 p_os << std::endl;
         } 
